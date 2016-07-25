@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root "home#index"
 
   get '/signup', to: 'users#new', as: :signup
-  resources :users, only: [:create]
+  
+  resources :users, only: [:create] do
+    resources :links, only: [:index]
+  end
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
