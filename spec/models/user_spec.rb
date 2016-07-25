@@ -6,4 +6,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_uniqueness_of(:email) }
     it { should_not allow_value("test@test").for(:email) }
   end
+
+  context "associations" do
+    it { should have_many(:links) }
+  end
 end
