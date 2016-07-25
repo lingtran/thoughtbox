@@ -29,7 +29,12 @@ RSpec.feature "User Can Log In or Sign Up", type: :feature do
   scenario "authenticated user can log in and sign out" do
     user = login_user
 
+    expect(page).to have_link "Sign Out"
     expect(page).to have_content "Links Index"
+
+    click_link "Sign Out"
+
+    expect(page).to have_current_path login_path
   end
 
 end
