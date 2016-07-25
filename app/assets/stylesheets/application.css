@@ -23,3 +23,7 @@
   background-color: red;
   color: white;
 }
+
+div.link-box {
+  border: grey dotted 2px
+}

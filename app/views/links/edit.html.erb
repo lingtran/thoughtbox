@@ -1,0 +1,7 @@
+<h3>Edit Link</h3>
+
+<%= form_for @link, url: user_link_path(current_user, @link) do |f| %>
+  <%= f.text_field :title, placeholder: "Title" %>
+  <%= f.text_field :url, placeholder: "URL"%>
+  <%= f.submit "Save Changes" %>
+<% end %>

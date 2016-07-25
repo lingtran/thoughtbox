@@ -14,10 +14,12 @@
 <section class="link-lists">
 
   <% @user_links.each do |link| %>
-    <div data-link-id=<%= link.id %> data-user-id= <%=current_user.id %> >
+    <div class="link-box" data-link-id=<%= link.id %> data-user-id= <%=current_user.id %> >
       Title: <p> <%= link.title %></p>
       URL: <p> <%= link.url %></p>
+      <%= link_to "Edit", edit_user_link_path(current_user, link) %> <br><br>
       Read? <p data-read-status=<%= link.read%> id="link-status" > <%= link.read %> </p> <%= mark(link) %>
     </div>
+    <br>
   <% end %>
 </section>

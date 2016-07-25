@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "User Can Submit and View Links", type: :feature do
   scenario "authenticated user can submit a link and see index of links" do
-    login_user
+    user = create(:user)
+    login_user(user)
 
     new_link = { title: "I Can Share With Friends - Hello Kitty",
                  url: "https://www.youtube.com/watch?v=UXW5_Dgj_5o" }

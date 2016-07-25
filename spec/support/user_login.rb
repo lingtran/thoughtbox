@@ -1,7 +1,5 @@
 module UserLogin
-  def login_user
-    user = create(:user)
-
+  def login_user(user)
     visit login_path
     within(".login-form") do
       fill_in "Email", with: "#{user.email}"

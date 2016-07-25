@@ -3,9 +3,14 @@ class LinksController < ApplicationController
     @user_links = Link.where(user_id: current_user.id)
   end
 
+  def edit
+    @link = Link.find_by(user_id: params[:user_id], id: params[:id])
+  end
+
   def create
     link = Link.create(user_id: current_user.id, title: params[:link][:title], url: params[:link][:url])
 
     redirect_to user_links_path(current_user)
   end
+
 end
