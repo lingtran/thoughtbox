@@ -15,9 +15,9 @@
 
   <% @user_links.each do |link| %>
     <div data-link-id=<%= link.id %> data-user-id= <%=current_user.id %> >
-        Title: <%= link.title %> </br>
-        URL: <%= link.url %> </br>
-        Read? <%= link.read %></br>
+      Title: <p> <%= link.title %></p>
+      URL: <p> <%= link.url %></p>
+      Read? <p data-read-status=<%= link.read%> id="link-status" > <%= link.read %> </p> <%= mark(link) %>
     </div>
   <% end %>
 </section>
