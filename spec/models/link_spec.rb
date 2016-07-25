@@ -4,6 +4,7 @@ RSpec.describe Link, type: :model do
   context "validations" do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:url) }
+    it { should_not allow_value("www.test.com").for(:url) }
   end
 
   context "check default of read status" do

@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    link = Link.create(user_id: current_user_.id, title: params[:link][:title], url: params[:link][:url])
+    link = Link.create(user_id: current_user.id, title: params[:link][:title], url: params[:link][:url])
 
   redirect_to user_links_path(current_user)
   end

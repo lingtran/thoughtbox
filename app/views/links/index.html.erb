@@ -4,7 +4,7 @@
 <div class="new-link-form">
   <%= form_for :link, url: user_links_path do |f| %>
     <%= f.text_field :title, placeholder: "Title" %>
-    <%= f.text_field :url, placeholder: "URL" %>
+    <%= f.url_field :url, placeholder: "URL" %>
     <%= f.submit "Submit", user_id: current_user.id %>
   <% end %>
 </div>
