@@ -1,5 +1,3 @@
-== README
-
 ### Production Link
 * [https://github.com/lingtran/thoughtbox](https://github.com/lingtran/thoughtbox)
 
