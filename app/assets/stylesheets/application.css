@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.read-btn {
+  background-color: green;
+  color: white;
+}
+
+.unread-btn {
+  background-color: red;
+  color: white;
+}
