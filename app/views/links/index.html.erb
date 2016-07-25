@@ -11,12 +11,13 @@
 
 <h3>Links Index</h3>
 
-<div class="link-lists">
-  <ul>
-    <% @user_links.each do |link| %>
-      <%= link.title %>
-      <%= link.url %>
-      <%= link.read %>
-    <% end %>
-  </ul>
-</div>
+<section class="link-lists">
+
+  <% @user_links.each do |link| %>
+    <div data-link-id=<%= link.id %> data-user-id= <%=current_user.id %> >
+        Title: <%= link.title %> </br>
+        URL: <%= link.url %> </br>
+        Read? <%= link.read %></br>
+    </div>
+  <% end %>
+</section>
