@@ -1,5 +1,5 @@
 class Api::V1::IdeasController < Api::ApiController
-  # before_filter :idea_params, on: [:create, :update]
+  before_filter :link_params, on: [:update]
 
   def update
     link = Link.find(params[:id].to_i)
