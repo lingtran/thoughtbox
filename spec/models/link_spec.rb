@@ -7,6 +7,10 @@ RSpec.describe Link, type: :model do
     it { should_not allow_value("www.test.com").for(:url) }
   end
 
+  context "associations" do
+    it { should belong_to(:user) }
+  end
+
   context "check default of read status" do
     it "should be false" do
       link_one = create(:link)
