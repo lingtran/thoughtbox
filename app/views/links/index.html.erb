@@ -2,17 +2,21 @@
 
 <h3>New Link</h3>
 <div class="new-link-form">
-  <%= form_for :link, url: user_links_path do |f| %>
+  <%= form_for :link do |f| %>
     <%= f.text_field :title, placeholder: "Title" %>
     <%= f.url_field :url, placeholder: "URL" %>
-    <%= f.submit "Submit", user_id: current_user.id %>
+    <%= f.submit "Submit" %>
   <% end %>
 </div>
 
 <h3>Links Index</h3>
 
-
-
 <div class="link-lists">
-
+  <ul>
+    <% @user_links.each do |link| %>
+      <%= link.title %>
+      <%= link.url %>
+      <%= link.read %>
+    <% end %>
+  </ul>
 </div>
