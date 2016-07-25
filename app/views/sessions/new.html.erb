@@ -1,0 +1,8 @@
+<div class="login-form">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.text_field :email, placeholder: "Email" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+    <%= submit_tag "Log In" %>
+  <% end %>
+  <br> or <%= link_to "Sign Up", signup_path %>
+</div>

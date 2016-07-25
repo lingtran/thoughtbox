@@ -39,6 +39,7 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include WaitForAjax, type: :feature
   config.include JsonHelpers, type: :request
+  config.include UserLogin, type: :feature
 
   config.include FactoryGirl::Syntax::Methods
 
