@@ -1,9 +1,9 @@
-class Api::V1::IdeasController < Api::ApiController
+class Api::V1::LinksController < Api::ApiController
   before_filter :link_params, on: [:update]
 
   def update
-    link = Link.find(params[:id].to_i)
-    link.update(current_user, link_params)
+    link = Link.find_by(user_id: params[:user_id], id: params[:link_id])
+    link.update(link_params)
     respond_with link, json: link
   end
 
