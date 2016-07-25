@@ -1,4 +1,4 @@
 ### Production Link
-* [https://github.com/lingtran/thoughtbox](https://github.com/lingtran/thoughtbox)
+* [http://fathomless-crag-66548.herokuapp.com/](http://fathomless-crag-66548.herokuapp.com/)
 
 FYI - troubleshooting deployment since of Monday, July 25, 5:00PM
