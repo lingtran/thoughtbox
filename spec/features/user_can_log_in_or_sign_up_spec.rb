@@ -24,8 +24,8 @@ RSpec.feature "User Can Log In or Sign Up", type: :feature do
     within(".signup-form") do
       fill_in "Email", with: "user@fake.com"
       fill_in "Password", with: "password"
-      fill_in "Password Confirmation", with: "password"
-      click_button "Submit"
+      fill_in "Confirm Password", with: "password"
+      click_button "Sign Up"
     end
 
     expect(page).to have_current_path root_path
