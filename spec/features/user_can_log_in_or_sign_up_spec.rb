@@ -2,19 +2,12 @@ require 'rails_helper'
 
 RSpec.feature "User Can Log In or Sign Up", type: :feature do
   scenario "unauthenticated user can sign up" do
-  # As an unauthenticated user, when I visit the root of the application, I should be redirected to a page which prompts me to "Log In or Sign Up".
-  # f I click "Sign Up", I should be taken to a user form where I can enter an email address, a password, and a password confirmation.
-
-  # I cannot sign up with an email address that has already been used.
-  # Password and confirmation must match.
-  # Upon submitting this information, I should be logged in via a cookie and redirected to the "Links Index" page.
-
     visit root_path
 
     expect(page).to have_current_path login_path
 
     within(".login-form") do
-      expect(page).to have_link "Log In"
+      expect(page).to have_button "Log In"
       expect(page).to have_link "Sign Up"
       click_link "Sign Up"
     end
@@ -32,4 +25,11 @@ RSpec.feature "User Can Log In or Sign Up", type: :feature do
 
     expect(page).to have_content "Links Index"
   end
+
+  scenario "authenticated user can log in and sign out" do
+    user = login_user
+
+    expect(page).to have_content "Links Index"
+  end
+
 end
