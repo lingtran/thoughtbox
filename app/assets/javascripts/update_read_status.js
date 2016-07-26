@@ -1,16 +1,17 @@
 function listenFor(element){
   $('body').children().delegate(element, "click", function(){
-    let currentStatus = $(this).parent().children('#link-status').data('read-status');
-    let parent = $(this).parent();
-    let userId = parent.data('user-id');
-    let linkId = parent.data('link-id');
+    var currentStatus = $(this).parent().children('#link-status').data('read-status');
+    var newStatus = !currentStatus;
+    var parent = $(this).parent();
+    var userId = parent.data('user-id');
+    var linkId = parent.data('link-id');
 
-    updateLinkReadStatus(userId, linkId, changeReadStatus(currentStatus), 'something went wrong with the update');
+    updateLinkReadStatus(userId, linkId, changeReadStatus(newStatus), 'something went wrong with the update');
   });
 }
 
-function changeReadStatus(currentStatus) {
-  return { read: !currentStatus }
+function changeReadStatus(newStatus) {
+  return { read: newStatus };
 }
 
 function updateLinkReadStatus (userId, linkId, patchReadStatusData, errorMessage){
@@ -34,7 +35,7 @@ function updateReadStatus(updateResponse){
   currentObject.children('#link-status').data('read-status', newStatus);
 
   // writing to DOM for debugging purposes;
-  currentObject.children('#link-status').attr('data-read-status', newStatus)
+  currentObject.children('#link-status').attr('data-read-status', newStatus);
 
   var markButton = currentObject.children('#mark-btn');
 

@@ -30,7 +30,6 @@ gem 'unicorn'
 gem 'rails_12factor', group: :production
 
 gem 'responders', '~> 2.0'
-gem 'active_model_serializers', github: "rails-api/active_model_serializers"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,8 +50,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'vcr'
-  gem 'webmock'
   gem 'simplecov', :require => false
 end
 

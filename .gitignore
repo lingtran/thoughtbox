@@ -14,3 +14,4 @@
 .DS-Store
 /coverage/*
 /spec/cassettes/*
+/config/secrets.yml
