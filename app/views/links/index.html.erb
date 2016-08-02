@@ -16,15 +16,14 @@
 
 <h3>Links Index</h3>
 
-<section class="link-lists">
+<section class="link-lists" data-user-id=<%=current_user.id%> >
   <button type="button" name="Filter By Read?" id="read-filter-button">Filter By Read</button>
   <button type="button" name="Filter By Read?" id="unread-filter-button">Filter By UnRead</button>
   <button type="button" name="Filter By Title" id="sort-links-button">Sort By Title (a-z)</button>
-  <button type="button" name="Filter By Title" id="undo-button">Undo Filter/Sort</button>
 
   <% @user_links.each do |link| %>
     <div class="link-box" data-link-id=<%= link.id %> data-user-id=<%=current_user.id%> data-link-url=<%=link.url%> data-link-title=<%=link.title%> data-read-status=<%= link.read%> >
-      Title: <p> <%= link.title %></p>
+      Title: <p id="title"> <%= link.title %></p>
       URL: <p> <%= link.url %></p>
       <%= link_to "Edit", edit_user_link_path(current_user, link) %> <br><br>
       Read? <p data-read-status=<%= link.read%> id="link-status" > <%= link.read %> </p> <%= mark(link) %>

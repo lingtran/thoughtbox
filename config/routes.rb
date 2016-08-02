@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      get '/users/:user_id/links', to: 'links#index'
       patch '/users/:user_id/links/:link_id', to: 'links#update'
     end
   end
