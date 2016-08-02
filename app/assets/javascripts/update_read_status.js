@@ -34,7 +34,6 @@ function updateReadStatus(updateResponse){
   currentObject.children('#link-status').text(newStatus);
   currentObject.children('#link-status').data('read-status', newStatus);
 
-  // writing to DOM for debugging purposes;
   currentObject.children('#link-status').attr('data-read-status', newStatus);
 
   var markButton = currentObject.children('#mark-btn');
