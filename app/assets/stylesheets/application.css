@@ -27,3 +27,12 @@
 .link-box {
   border: grey dotted 2px;
 }
+
+input[type="text_area"]{
+  width: 850px;
+}
+
+.search-links input[type="text_area"]{
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
