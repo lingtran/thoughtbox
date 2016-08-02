@@ -6,40 +6,32 @@
 $(document).ready(function(){
   listenFor("#mark-btn");
 
-
-
   searchOnEvent("click");
 
-  function searchOnEvent(eventName){
-    var searchButton = document.getElementById('search-button');
-    searchButton.addEventListener(eventName, searchTerm, false);
-  }
+  filterOnEventFor("click", "read-filter-button");
+  filterOnEventFor("click", "unread-filter-button");
 
-  function searchTerm(){
-    var linksContent = document.querySelectorAll('.link-box');
+  function filterOnEventFor(eventName, selector) {
+    var filterButton = document.getElementById(selector);
 
-    linksContent.forEach(checkLink);
-  }
-
-  function checkLink(element, index){
-    var term = document.getElementById('search-box').value;
-    // title seems incomplete, need to extract full content
-    var title = element.dataset.linkTitle;
-    var url = element.dataset.linkUrl;
-
-    compareTerm(element, term, title, url);
-  }
-
-  function compareTerm (element, term, title, url){
-    // add check if url includes text
-    // compareWithTitle(title)
-    // compareWith(URL)
-
-    if (term === title || term === url) {
-      $(element).hide();
-    } else if ( term === "") {
-      $(element).show();
+    if (selector === 'read-filter-button') {
+      filterButton.addEventListener(eventName, filterUnread, false);
+    } else {
+      filterButton.addEventListener(eventName, filterRead, false);
     }
   }
+
+  function filterUnread() {
+    var unreadLinks = document.querySelectorAll("[data-read-status='false']");
+    unreadLinks.forEach(element => $(element).hide());
+  }
+
+
+  function filterRead(){
+    var readLinks = document.querySelectorAll("[data-read-status='true']");
+    readLinks.forEach(element => $(element).hide());
+  }
+
+
 
 });

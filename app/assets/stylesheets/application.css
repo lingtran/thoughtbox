@@ -36,3 +36,7 @@ input[type="text_area"]{
   margin-top: 12px;
   margin-bottom: 2px;
 }
+
+button#read-filter-button button#unread-filter-button button#sort-links-button button#undo-button {
+  margin-bottom: 12px;
+}
