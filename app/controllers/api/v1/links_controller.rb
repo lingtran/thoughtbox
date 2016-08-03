@@ -2,7 +2,7 @@ class Api::V1::LinksController < Api::ApiController
   before_filter :link_params, on: [:update]
 
   def index
-    link = Link.where(user_id: current_user.id).order("title ASC")
+    link = Link.where(user_id: params[:user_id]).order("title ASC")
     respond_with link, json: link
   end
 
