@@ -10,10 +10,16 @@ function filterOnEventFor(eventName, selector) {
 
 function filterUnread() {
   var unreadLinks = document.querySelectorAll("[data-read-status='false']");
-  unreadLinks.forEach(element => $(element).hide());
+
+  unreadLinks.forEach(function(element, index){
+    $(element).hide();
+  });
 }
 
 function filterRead(){
   var readLinks = document.querySelectorAll("[data-read-status='true']");
-  readLinks.forEach(element => $(element).hide());
+
+  readLinks.forEach(function(element, index){
+    $(element).hide();
+  });
 }

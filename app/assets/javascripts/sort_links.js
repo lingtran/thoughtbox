@@ -27,12 +27,6 @@ function orderLinks(links) {
   console.table(links);
 
   links.forEach(function(object){
-    $('.link-lists').append(
-      "<div class=link-box data-link-id= " + object.id + " data-user-id=" + object.user_id + "data-link-url=" + object.url + " data-link-title=" + object.title + " data-read-status=" + object.read + ">" +
-      'Title: <p id="title">' + object.title + "</p>" +
-      "URL: <p>" + object.url + " </p>" +
-      "Read?" + "<p data-read-status=" + object.read + ' id=link-status>' + object.read + "</p>" +
-      "</div><br>"
-    )
-  })
+    $('.link-lists').append("<div class=link-box>" + "<p> Title: " + object.title + "</p>" + "<p> URL: " + object.url + "</p>" + "<p> Read? " + object.read + "</p>" + "</div><br></br>");
+  });
 }

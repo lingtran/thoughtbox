@@ -15,7 +15,7 @@ function checkLink(element, index) {
   var url = element.dataset.linkUrl;
 
   if ( title.includes(term) || url.includes(term)) {
-    $(element).show()
+    $(element).show();
   } else {
     $(element).hide();
   }
